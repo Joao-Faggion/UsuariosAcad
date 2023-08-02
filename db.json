@@ -1,0 +1,25 @@
+{
+  "consulta": [
+    {
+      "nome": "Joao",
+      "sobrenome": "Faggion",
+      "email": "joaofagion2003@gmail.com",
+      "telefone": "46991150027",
+      "peso": 88,
+      "altura": 1.81,
+      "imc": 26.861206922865602,
+      "imcResultado": "Acima do Peso",
+      "genero": "Masculino",
+      "precisaPersonal": "Sim",
+      "plano": "Anual",
+      "importante": [
+        "Queima de Gordura",
+        "Energia e Stamina",
+        "Criar massa magra e músuclos"
+      ],
+      "fezAcadAntes": "Sim",
+      "dataConsulta": "2023-08-03T03:00:00.000Z",
+      "id": 1
+    }
+  ]
+}
