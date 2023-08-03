@@ -39,44 +39,6 @@
       "fezAcadAntes": "Sim",
       "dataConsulta": "2023-08-11T03:00:00.000Z",
       "id": 2
-    },
-    {
-      "nome": "Teste denovo",
-      "sobrenome": "Reload",
-      "email": "reloadteste@gmail.com",
-      "telefone": "46991143870",
-      "peso": 78,
-      "altura": 1.91,
-      "imc": 21.380992845590857,
-      "imcResultado": "Normal",
-      "genero": "Masculino",
-      "precisaPersonal": "Sim",
-      "plano": "Semestral",
-      "importante": [
-        "Fitness"
-      ],
-      "fezAcadAntes": "Sim",
-      "dataConsulta": "2023-08-18T03:00:00.000Z",
-      "id": 3
-    },
-    {
-      "nome": "Ultimo",
-      "sobrenome": "Reload",
-      "email": "samhdjashdakjhd",
-      "telefone": "9999999999",
-      "peso": 99,
-      "altura": 1.88,
-      "imc": 28.010411951109102,
-      "imcResultado": "Acima do Peso",
-      "genero": "Masculino",
-      "precisaPersonal": "Sim",
-      "plano": "Anual",
-      "importante": [
-        "Queima de Gordura"
-      ],
-      "fezAcadAntes": "Sim",
-      "dataConsulta": "2023-08-07T03:00:00.000Z",
-      "id": 4
     }
   ]
 }

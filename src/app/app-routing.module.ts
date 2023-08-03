@@ -25,7 +25,6 @@ const routes: Routes = [
   {
     path: 'atualizar/:id',
     component: CriaCadastroComponent
-
   },
 ];
 

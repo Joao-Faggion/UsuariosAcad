@@ -22,7 +22,7 @@ export class ListaCadastroComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   displayedColumns: string[] = ["id", "nome", "sobrenome", "email", "telefone", "imcResultado", "genero", "plano", "dataConsulta", "acao"];
 
-  constructor(private service: ApiService, private router: Router, private confirm: NgConfirmService, private toastService:NgToastService) {
+  constructor(private service: ApiService, private router: Router, private confirm: NgConfirmService, private toastService: NgToastService) {
 
   }
 
@@ -44,7 +44,7 @@ export class ListaCadastroComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.confirm.showConfirm("Você quer deletar esse usuário?", () => {
+    this.confirm.showConfirm(`Você quer deletar esse usuário?`, () => {
       this.service.deleteCadastroUsuario(id).subscribe(res => {
         this.toastService.success({ detail: "SUCESSO", summary: "Usuário Deletado", duration: 3000 });
         this.getUsuarios();

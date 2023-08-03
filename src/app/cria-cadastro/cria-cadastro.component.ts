@@ -20,7 +20,7 @@ export class CriaCadastroComponent implements OnInit {
   public idAtualizaUsuario!: number;
   public isUpdateActive: boolean = false;
 
-  constructor(private builder: FormBuilder,private router: Router ,private activatedRoute: ActivatedRoute, private service: ApiService, private toastService: NgToastService) { }
+  constructor(private builder: FormBuilder, private router: Router, private activatedRoute: ActivatedRoute, private service: ApiService, private toastService: NgToastService) { }
 
   ngOnInit(): void {
     this.submitForm = this.builder.group({
@@ -53,11 +53,25 @@ export class CriaCadastroComponent implements OnInit {
     })
   }
 
-  atualizar(){
+  atualizar() {
     this.service.updateCadastroUsuario(this.submitForm.value, this.idAtualizaUsuario).subscribe(res => {
-      this.toastService.success({ detail: "SUCESSO", summary: "Usuário Alterado", duration: 3000 });
-      this.submitForm.reset();
-      this.router.navigate(['lista'])
+      try {
+        this.toastService.success({ detail: "SUCESSO", summary: "Usuário Alterado", duration: 3000 });
+      }
+      catch (e) {
+        console.log(e)
+      }
+      finally {
+        this.submitForm.reset();
+
+        setTimeout(() => {
+          this.router.navigate(['lista'])
+        }, 1500)
+
+
+      }
+
+
     })
   }
 
