@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CriaCadastroComponent } from './cria-cadastro/cria-cadastro.component';
 import { DetalheUsuarioComponent } from './detalhe-usuario/detalhe-usuario.component';
 import { ListaCadastroComponent } from './lista-cadastro/lista-cadastro.component';
-import { NgToastModule } from 'ng-angular-popup';
-import { NgConfirmModule } from 'ng-confirm-box';
+
 import { MaterialModule } from './material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgToastModule } from 'ng-angular-popup';
+import { NgConfirmModule } from 'ng-confirm-box';
+
 
 @NgModule({
   declarations: [

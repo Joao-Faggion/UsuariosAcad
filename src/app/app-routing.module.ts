@@ -19,8 +19,13 @@ const routes: Routes = [
     component: ListaCadastroComponent
   },
   {
-    path: 'detalhes',
+    path: 'detalhes/:id',
     component: DetalheUsuarioComponent
+  },
+  {
+    path: 'atualizar/:id',
+    component: CriaCadastroComponent
+
   },
 ];
 

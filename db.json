@@ -1,7 +1,7 @@
 {
   "consulta": [
     {
-      "nome": "Joao",
+      "nome": "Joao Victor",
       "sobrenome": "Faggion",
       "email": "joaofagion2003@gmail.com",
       "telefone": "46991150027",
@@ -11,7 +11,7 @@
       "imcResultado": "Acima do Peso",
       "genero": "Masculino",
       "precisaPersonal": "Sim",
-      "plano": "Anual",
+      "plano": "Semestral",
       "importante": [
         "Queima de Gordura",
         "Energia e Stamina",

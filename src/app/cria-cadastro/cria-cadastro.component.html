@@ -130,6 +130,7 @@
                 </mat-form-field>
             </div>
         </div>
-        <button mat-raised-button class="mt-4" type="submit" (click)="enviarForm()" color="warn">Enviar</button>
+        <button mat-raised-button class="mt-4" type="submit" *ngIf="!isUpdateActive" (click)="enviarForm()" color="warn">Enviar</button>
+        <button mat-raised-button class="mt-4" type="submit" *ngIf="isUpdateActive" (click)="atualizar()" color="warn">Atualizar</button>
     </form>
 </div>

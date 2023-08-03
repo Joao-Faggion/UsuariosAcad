@@ -1,1 +1,60 @@
-<p>detalhe-usuario works!</p>
+<mat-card class="example-card text-center">
+    <mat-card-header class="justify-content-center">
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{usuarioDetails.nome}} {{usuarioDetails.sobrenome}}</mat-card-title>
+        <mat-card-subtitle>{{usuarioDetails.email}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>
+                <div matLine>
+                    Número de Telefone :
+                    <button mat-button>{{usuarioDetails.telefone}}</button>
+                </div>
+            </mat-list-item>
+
+            <mat-list-item>
+                <div matLine>
+                    Gênero :
+                    <button mat-button>{{usuarioDetails.genero}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Plano :
+                    <button mat-button>{{usuarioDetails.plano}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    IMC :
+                    <button mat-button>{{usuarioDetails.imc}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Resultado IMC :
+                    <button mat-button>{{usuarioDetails.imcResultado}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Precisa de Personal :
+                    <button mat-button>{{usuarioDetails.precisaPersonal}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Objetivos :
+                    <button mat-button><mat-chip-listbox>
+                            <ng-container *ngFor="let row of usuarioDetails.importante">
+                                <mat-chip-option selected>{{row}}</mat-chip-option>
+                            </ng-container>
+                        </mat-chip-listbox></button>
+
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
