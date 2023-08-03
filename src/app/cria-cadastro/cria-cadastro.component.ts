@@ -14,7 +14,7 @@ export class CriaCadastroComponent implements OnInit {
 
   public planos: string[] = ["Mensal", "Trimestral", "Semestral", "Anual"];
   public generos: string[] = ["Masculino", "Feminino"];
-  public listaImportante: string[] = ["Queima de Gordura", "Energia e Stamina", "Criar massa magra e músuclos", "Vida Mais Saudável", "Fitness"];
+  public listaImportante: string[] = ["Queima de Gordura", "Energia e Stamina", "Criar massa magra e músculos", "Vida Mais Saudável", "Fitness"];
 
   public submitForm!: FormGroup;
   public idAtualizaUsuario!: number;
