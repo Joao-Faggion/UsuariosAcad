@@ -85,7 +85,9 @@ export class CriaCadastroComponent implements OnInit {
   enviarForm() {
     this.service.postCadastro(this.submitForm.value).subscribe(res => {
       this.toastService.success({ detail: "SUCESSO", summary: "Consulta adicionada", duration: 3000 });
-      this.submitForm.reset();
+      setTimeout(() => {
+        window.location.reload()
+      }, 3001);
     })
   }
 
