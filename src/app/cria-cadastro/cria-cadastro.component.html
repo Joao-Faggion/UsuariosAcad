@@ -21,17 +21,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col md-6 mt-3">
+            <div class="col md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
                     <input formControlName="email" matInput type="text" placeholder="Seu email" required>
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                 </mat-form-field>
             </div>
-            <div class="col md-6 mt-3">
+            <div class="col md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Telefone</mat-label>
-                    <input formControlName="telefone" matInput placeholder="Seu número" required>
+                    <input formControlName="telefone" matInput type="text" placeholder="Seu telefone" required>
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                 </mat-form-field>
             </div>
@@ -68,16 +68,6 @@
                     </mat-form-field>
                 </div>
  
-            <div class="row">
-                <div class="col-md-6 mt-3">
-                    <label id="example-radio-group-label">Você precisa de acompanhamento de um Personal Trainer?</label>
-                    <mat-radio-group formControlName="precisaPersonal" required aria-labelledby="example-radio-group-label" class="example-radio-group">
-                        <mat-radio-button class="example-radio-button" *ngFor="let Personal of ['Sim', 'Não']"
-                            [value]="Personal">
-                            {{Personal}}
-                        </mat-radio-button>
-                    </mat-radio-group>
-                </div>
                 <div class="col-md-6 mt-3">
                     <label id="example-radio-group-label">Gênero:</label>
                     <mat-radio-group formControlName="genero" required aria-labelledby="example-radio-group-label" class="example-radio-group">
@@ -87,7 +77,6 @@
                     </mat-radio-group>
                 </div>
             </div>
-        </div>
         <div class="row">
             <div class="col md-6 mt-1">
                 <mat-form-field appearance="outline">
@@ -99,36 +88,7 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-            <div class="col md-6 mt-1">
-                <mat-form-field appearance="outline">
-                    <mat-label>Quais dos fatores a seguir são importantes para você?</mat-label>
-                    <mat-select formControlName="importante" required multiple>
-                        <mat-option *ngFor="let importante of listaImportante" [value]="importante">
-                            {{importante}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <label id="example-radio-group-label">Você já fez Academia Antes?</label>
-                <mat-radio-group formControlName="fezAcadAntes" required aria-labelledby="example-radio-group-label" class="example-radio-group">
-                    <mat-radio-button class="example-radio-button" *ngFor="let academia of ['Sim', 'Não']"
-                        [value]="academia">
-                        {{academia}}
-                    </mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col md-6">
-                <mat-form-field appearance="outline">
-                    <mat-label>Data de Consulta</mat-label>
-                    <input formControlName="dataConsulta" required matInput [matDatepicker]="picker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-            </div>
+
         </div>
         <button mat-raised-button class="mt-4" type="submit" *ngIf="!isUpdateActive" (click)="enviarForm()" color="warn">Enviar</button>
         <button mat-raised-button class="mt-4" type="submit" *ngIf="isUpdateActive" (click)="atualizar()" color="warn">Atualizar</button>

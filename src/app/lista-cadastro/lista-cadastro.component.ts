@@ -20,7 +20,7 @@ export class ListaCadastroComponent implements OnInit {
   public usuarios!: Usuario[];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  displayedColumns: string[] = ["id", "nome", "sobrenome", "email", "telefone", "imcResultado", "genero", "plano", "dataConsulta", "acao"];
+  displayedColumns: string[] = ["id", "nome", "sobrenome", "email", "telefone", "imcResultado", "genero", "plano", "acao"];
 
   constructor(private service: ApiService, private router: Router, private confirm: NgConfirmService, private toastService: NgToastService) {
 
