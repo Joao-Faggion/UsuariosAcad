@@ -97,12 +97,33 @@ export class CriaCadastroComponent implements OnInit {
 
 
   enviarForm() {
-    this.service.postCadastro(this.submitForm.value).subscribe(res => {
-      this.toastService.success({ detail: "SUCESSO", summary: "Consulta adicionada", duration: 3000 });
-      setTimeout(() => {
-        window.location.reload()
-      }, 3001);
-    })
+    if (this.submitForm.valid) {
+      try {
+        this.service.postCadastro(this.submitForm.value).subscribe(res => {
+          this.toastService.success({ detail: "SUCESSO", summary: "Cadastro adicionado.", duration: 3000 });
+
+        }
+
+        )
+      }
+
+      catch (e) {
+        console.log(e)
+      }
+
+      finally {
+        // setTimeout(() => {
+        //   window.location.reload()
+        // }, 3001);
+
+        setTimeout(() => {
+          this.router.navigate(['lista']);
+        }, 3002);
+
+      }
+    } else {
+      this.toastService.error({ detail: "ERRO", summary: "Informe seus dados nos campos solicitados.", duration: 3000 })
+    }
   }
 
   calcularIMC(value: number) {
