@@ -38,23 +38,6 @@
                     <button mat-button>{{usuarioDetails.imcResultado}}</button>
                 </div>
             </mat-list-item>
-            <mat-list-item>
-                <div matLine>
-                    Precisa de Personal :
-                    <button mat-button>{{usuarioDetails.precisaPersonal}}</button>
-                </div>
-            </mat-list-item>
-            <mat-list-item>
-                <div matLine>
-                    Objetivos :
-                    <button mat-button><mat-chip-listbox>
-                            <ng-container *ngFor="let row of usuarioDetails.importante">
-                                <mat-chip-option selected>{{row}}</mat-chip-option>
-                            </ng-container>
-                        </mat-chip-listbox></button>
-
-                </div>
-            </mat-list-item>
         </mat-list>
     </mat-card-content>
 </mat-card>

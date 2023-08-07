@@ -15,7 +15,7 @@ export class CriaCadastroComponent implements OnInit {
   public planos: string[] = ["Mensal", "Trimestral", "Semestral", "Anual"];
   public generos: string[] = ["Masculino", "Feminino"];
   public listaImportante: string[] = ["Queima de Gordura", "Energia e Stamina", "Criar massa magra e músculos", "Vida Mais Saudável", "Fitness"];
-
+  public imc!: number;
   public submitForm!: FormGroup;
   public idAtualizaUsuario!: number;
   public isUpdateActive: boolean = false;
@@ -98,52 +98,55 @@ export class CriaCadastroComponent implements OnInit {
 
   enviarForm() {
     if (this.submitForm.valid) {
+      
       try {
         this.service.postCadastro(this.submitForm.value).subscribe(res => {
           this.toastService.success({ detail: "SUCESSO", summary: "Cadastro adicionado.", duration: 3000 });
-
         }
-
         )
       }
 
       catch (e) {
-        console.log(e)
+        console.log(e);
       }
 
       finally {
-        // setTimeout(() => {
-        //   window.location.reload()
-        // }, 3001);
-
         setTimeout(() => {
           this.router.navigate(['lista']);
         }, 3002);
 
       }
+
     } else {
       this.toastService.error({ detail: "ERRO", summary: "Informe seus dados nos campos solicitados.", duration: 3000 })
     }
-  }
+  };
 
   calcularIMC(value: number) {
     const peso = this.submitForm.value.peso; // weight in kilograms
     const altura = value; // height in meters
-    const imc = peso / (altura * altura);
+    const imc1 = peso / (altura * altura);
+    var imc = +imc1.toFixed(2);
     this.submitForm.controls['imc'].patchValue(imc);
     switch (true) {
       case imc < 18.5:
         this.submitForm.controls['imcResultado'].patchValue("Abaixo do Peso");
         break;
       case (imc >= 18.5 && imc < 25):
-        this.submitForm.controls['imcResultado'].patchValue("Normal");
+        this.submitForm.controls['imcResultado'].patchValue("Peso Normal");
         break;
       case (imc >= 25 && imc < 30):
         this.submitForm.controls['imcResultado'].patchValue("Acima do Peso");
         break;
+      case (imc >= 30 && imc < 35):
+        this.submitForm.controls['imcResultado'].patchValue("Obesidade |");
+        break;
+      case (imc >= 35 && imc < 39.9):
+        this.submitForm.controls['imcResultado'].patchValue("Obesidade ||");
+        break;
 
       default:
-        this.submitForm.controls['imcResultado'].patchValue("Obeso");
+        this.submitForm.controls['imcResultado'].patchValue("Obesidade |||");
         break;
     }
   }
